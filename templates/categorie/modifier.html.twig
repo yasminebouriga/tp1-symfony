@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la catégorie{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1>Modifier la catégorie : {{ categorie.nom }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.description) }}
+        <button type="submit" class="btn btn-primary mt-3">💾 Enregistrer les modifications</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_categorie_detail', {id: categorie.id}) }}" class="btn btn-secondary mt-3">⬅️ Retour</a>
+</div>
+{% endblock %}
